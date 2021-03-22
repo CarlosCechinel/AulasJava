@@ -26,13 +26,14 @@ public class Uri1018 {
         re6=x/2;
         x=x%2;
 
-        System.out.println(re1 +" nota(s) de R$ 100,00");
-        System.out.println(re2 +" nota(s) de R$ 50,00");
-        System.out.println(re3 +" nota(s) de R$ 20,00");
-        System.out.println(re4 +" nota(s) de R$ 10,00");
-        System.out.println(re5 +" nota(s) de R$ 5,00");
-        System.out.println(re6 +" nota(s) de R$ 2,00");
-        System.out.println(x +" nota(s) de R$ 1,00");
+        System.out.println(valor);
+        System.out.println(re1 + " nota(s) de R$ 100,00");
+        System.out.println(re2 + " nota(s) de R$ 50,00");
+        System.out.println(re3 + " nota(s) de R$ 20,00");
+        System.out.println(re4 + " nota(s) de R$ 10,00");
+        System.out.println(re5 + " nota(s) de R$ 5,00");
+        System.out.println(re6 + " nota(s) de R$ 2,00");
+        System.out.println(x + " nota(s) de R$ 1,00");
 
         entrada.close();
         
