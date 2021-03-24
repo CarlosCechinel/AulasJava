@@ -22,23 +22,20 @@ public class AppContas {
 
             switch (opcao) {
             case 1:
-                System.out.println("Informe o numero da conta: ");
-                numeroConta = teclado.nextInt();
-                contas.novaContaCorrente(numeroConta);
+                numeroConta= contas.novaContaCorrente();
+                System.out.println("Conta crida: "+numeroConta);
                 break; // interrompe a execucao do case
 
             case 2:
-                System.out.println("Informe o numero da conta: ");
-                numeroConta = teclado.nextInt();
                 System.out.println("Informe o limite da conta: ");
                 limite = teclado.nextDouble();
-                contas.novaContaEspecial(numeroConta, limite);
+                numeroConta= contas.novaContaEspecial(limite);
+                System.out.println("Conta criada: "+numeroConta+"\nLimite: "+limite);
                 break;
 
             case 3:
-                System.out.println("Informe o numero da conta: ");
-                numeroConta = teclado.nextInt();
-                contas.novaContaPoup(numeroConta);
+                numeroConta= contas.novaContaPoup();
+                System.out.println("Conta crida: "+numeroConta);
                 break;
 
             case 4:
@@ -58,7 +55,7 @@ public class AppContas {
                 numeroConta = teclado.nextInt();
                 System.out.println("Digite o valor a ser Sacado: ");
                 valor = teclado.nextInt();
-                if (contas.Sacar(numeroConta, valor)) { // chamando o metodo tempos separacao de interfce e logica
+                if (contas.Sacar(numeroConta, valor)) {       // chamando o metodo tempos separacao de interfce e logica
                     System.out.println("Operaçao realizada"); // esse metodo permite migrar de interface sem precisar
                                                               // alterar metodo
                 } else {

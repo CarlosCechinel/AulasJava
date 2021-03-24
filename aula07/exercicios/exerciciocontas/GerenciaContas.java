@@ -1,26 +1,32 @@
 package exercicios.exerciciocontas;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class GerenciaContas {
     private HashMap<Integer, Conta> hashConta; // <Chave,valor>, chave = numero da conta, valor= conta;
+    private GerarNumero gerarNumero; //iniciar outra classe
 
     public GerenciaContas() {
         hashConta = new HashMap<>();
+        gerarNumero=new GerarNumero(); // declarar a classe no construtor
     }
 
-    public void novaContaCorrente(int numeroConta) {
+    public int novaContaCorrente() {
+        int numeroConta=gerarNumero.proximo();
         hashConta.put(numeroConta, new ContaCorrente(numeroConta));
-
+        return numeroConta;
     }
 
-    public void novaContaEspecial(int numeroConta, double limite) {
-        hashConta.put(numeroConta, new ContaCorrente(numeroConta));
+    public int novaContaEspecial(double limite) {
+        int numeroConta=gerarNumero.proximo();
+        hashConta.put(numeroConta, new ContaCoEspec(numeroConta, limite));
+        return numeroConta;
     }
 
-    public void novaContaPoup(int numeroConta) {
-        hashConta.put(numeroConta, new ContaCorrente(numeroConta));
+    public int novaContaPoup() {
+        int numeroConta=gerarNumero.proximo();
+        hashConta.put(numeroConta, new ContaPoup(numeroConta));
+        return numeroConta;
     }
 
     public boolean depositar(int numeroConta, double valor) {
@@ -48,7 +54,7 @@ public class GerenciaContas {
             return false;
         }
 
-    private String consultarConta(int numeroConta) {{
+    String consultarConta(int numeroConta) {{
         Conta conta=hashConta.get(numeroConta); // verificando a partir do codigo o numero da conta + performatico do que verificar a lista
             
         if(conta !=null) {
