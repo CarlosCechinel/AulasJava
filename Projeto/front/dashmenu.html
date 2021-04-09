@@ -15,13 +15,15 @@
     <title>Menu</title>
 </head>
 <body onload="validaLogin()">
-    <div id="user"></div>
-    <div id="foto"></div>
-    <button onclick="logout()">Logout</button>
+    <div class="container"></div>
+    <h2><div id="user"></div></h2>
+    <button float:right onclick="logout()">Logout</button>
+    <div id="foto" class="fotoperfil"></div>
     <br>
     <input type="date" id="dataInicio">
     <input type="date" id="dataFinal">
-    <button class = "btn btn-primary" onclick="gerarRelatorio()">Gerar</button>
+    <button onclick="gerarRelatorio()">Gerar relatório de eventos</button>
+    <button onclick="relacaoAlarme()">Relação de alarmes</button>
     <br>
     <div id="tabela"></div>
 </body>
