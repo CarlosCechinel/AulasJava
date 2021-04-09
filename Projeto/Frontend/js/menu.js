@@ -18,8 +18,9 @@ function logout() {
 }
 
 function gerarRelatorio() {
-    //let dataInicio = document.getElementById("dataInicio").value //.value carrega apenas o valor
-    // let dataInicio = document.getElementById("dataFinal").value 
+    let dataInicio = document.getElementById("dataInicio").value //.value carrega apenas o valor
+    let dataFinal = document.getElementById("dataFinal").value 
+
 
     fetch("http://localhost:8080/usuarios/all")
         .then(res => tratarResposta(res))
