@@ -7,7 +7,7 @@ function validaLogin() {
 
     let user = JSON.parse(userTxt);
 
-    document.getElementById("user").innerHTML = `nome: ${user.nome} RACF ${user.racf}` 
+    document.getElementById("user").innerHTML = `Nome: ${user.nome} <br> RACF: ${user.racf}` 
     document.getElementById("foto").innerHTML = `<img src=${user.linkFoto}>`
     
 }
